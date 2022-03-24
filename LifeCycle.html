@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <script src=""angular.js"></script>
+    </head>
+
+    <body ng-app="myApp" ng-controller="myCtrl">
+        {{username}}
+    </body>
+
+    <script>
+        var app = anguler.module("myApp",[]);
+        app.controller("myCtrl",function($scope, $timeout){
+            $scope.username = "Vineeth";
+            setTimeout(function(){
+            $scope.username = "Thummanapally";
+            alert("Updated Variable = "+$scope.username);
+            $scope.$apply();
+            }, 2000)
+        });
+    </script>
+</html>
