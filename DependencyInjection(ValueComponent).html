@@ -1,17 +1,14 @@
 <html>
     <head>
-        <script src=""angular.js"></script>
+        <script src="angular.js"></script>
     </head>
 
-    <body ng-app=""myApp>
-        <div ng-controller="myCtrl">
-        </div>
-
+    <body ng-app="myApp" ng-controller="myCtrl">
         <script>
             var app = angular.module("myApp",[]);
-            app.value("numberValue", 7);
+            app.value("numberValue", 100);
             app.controller("myCtrl", function($scope, numberValue){
-                document.writeln(numberValue);
+                document.write(numberValue);
             });
         </script>
     </body>
