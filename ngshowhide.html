@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <script src="angular.js"></script>
+    </head>
+
+    <body ng-app="">
+
+        <input type="checkbox" ng-model="status_2">
+        <div ng-hide="status_2">
+            <p>This is not displayed when check box ticked</p>
+        </div>
+        <br>
+        <input type="checkbox" ng-model="status_1">
+        <div ng-show="status_1">
+            <p>This is displayed when check box ticked</p>
+        </div>
+    </body>
+</html>
