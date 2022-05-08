@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <script src="angular.js"></script>
+    </head>
+
+    <body ng-app="myApp">
+
+        <div ng-controller="parentCtrl">
+            <p>{{parent}}</p>
+            <p>{{msg}}</p>
+
+            <div ng-controller="childCtrl">
+                <p>{{child}}</p>
+                <p>{{msg}}</p>
+            </div>
+        </div>
+
+        
+
+        <div ng-controller="siblingCtrl">
+            <p>{{sibling}}</p>
+            <p>{{msg}}</p>
+        </div>
+        
+
+        <script>
+            var app = angular.module('myApp', []);
+            app.controller('parentCtrl', function($scope, $rootScope){
+                $rootScope.msg = "Common Message";
+                $scope.parent = "Displayed from Parent";
+            });
+
+            app.controller('childCtrl',function($scope){
+                $scope.child = "Displayed from Child";
+            })
+
+            app.controller('siblingCtrl', function($scope){
+                $scope.sibling = "Displayed from Sibling";
+            });
+        </script>
+    </body>
+</html>
